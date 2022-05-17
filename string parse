@@ -1,0 +1,24 @@
+highlighted_poems = "Afterimages:Audre Lorde:1997,  The Shadow:William Carlos Williams:1915, Ecstasy:Gabriela Mistral:1925,   Georgia Dusk:Jean Toomer:1923,   Parting Before Daybreak:An Qi:2014, The Untold Want:Walt Whitman:1871, Mr. Grumpledump's Song:Shel Silverstein:2004, Angel Sound Mexico City:Carmen Boullosa:2013, In Love:Kamala Suraiyya:1965, Dream Variations:Langston Hughes:1994, Dreamwood:Adrienne Rich:1987"
+#print(highlighted_poems)
+# goal is to parse the string, to get the author,title, date of publication
+highlighted_poems_list = highlighted_poems.split(",")
+#print(highlighted_poems_list)
+# strip the whitespaces
+highlighted_poems_stripped = [string.strip() for string in highlighted_poems_list]
+#print(highlighted_poems_stripped)
+
+#split by :
+highlighted_poems_details = [string.split(":") for string in highlighted_poems_stripped ]
+print(highlighted_poems_details)
+titles = []
+poets = []
+dates = []
+for sub_list in highlighted_poems_details:
+  titles.append(sub_list[0])
+  poets.append(sub_list[1])
+  dates.append(sub_list[2])
+print(titles)
+print(dates)
+print(poets)
+for i in range(len(titles)):
+  print(f"The poem {titles[i]} was published by {dates[i]} in {poets[i]}.")
